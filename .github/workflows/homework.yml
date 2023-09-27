@@ -9,4 +9,10 @@ jobs:
     steps:
       - run: echo "hello world"
       - name : Print Title of PR
-        run: echo The Title of your PR is ${{ github.event.pull_request }}
+        run: echo The Title of your PR is ${{ github.event.pull_request.title}}
+      - name: Clonar el repositorio
+        uses: actions/checkout@v2
+      - name: Obtener cambios
+        run: |
+          git fetch origin main
+          git diff origin/main..HEAD
