@@ -1,7 +1,7 @@
 on:
   pull-request:
-    branches:
-    - main
+
+    types: [opened]
 jobs:
   hello-world:
     runs-on: ubuntu-latest
