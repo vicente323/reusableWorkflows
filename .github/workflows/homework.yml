@@ -1,0 +1,11 @@
+on:
+  pull-request:
+    branches:
+    - main
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world"
+      - name : Print Title of PR
+        run: echo The Title of your PR is ${{ github.event.pull_request.title }}
